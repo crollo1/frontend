@@ -7,7 +7,7 @@ interface IChatProps {
 const Chat: React.FunctionComponent<IChatProps> = (props) => {
     return (
         <div>
-            Chat
+            CHAT
             <Button onClick={() => signOut()}>Logout</Button>
         </div>
     );

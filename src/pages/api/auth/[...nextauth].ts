@@ -15,4 +15,12 @@ export default NextAuth({
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    async session({ session, token, user }) {
+      console.log("INSIDE OF THE SESSION CALLBACK");
+      
+      // return { ...session, customProperty: "Craig "};
+      return { ...session, user: { ...session.user, ...user } }
+    },
+  },
 });

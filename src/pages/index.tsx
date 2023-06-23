@@ -11,11 +11,15 @@ export default function Home() {
   const { data: session } = useSession();
   console.log("Here is the SESSION!", session);
 
-  const reloadSession = () => {};
+  const reloadSession = () => {
+    const event = new Event("visibilitychange");
+    document.dispatchEvent(event);
+  };
   
   return (
 
     <Box >
+      {session?.user.username}
       {session?.user?.username ? (
         <Chat /> 
       ) : ( 
