@@ -1,4 +1,5 @@
 import {  
+    Modal,
     ModalOverlay, 
     ModalContent, 
     ModalHeader, 
@@ -8,13 +9,14 @@ import {
 } from "@chakra-ui/react";
 
 interface ModalProps {
-
+    isOpen: boolean;
+    onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = () => {
+const ConversationModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     return (
         <>
-          <Modal>
+          <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
               <ModalHeader>Modal Title</ModalHeader>
@@ -25,7 +27,7 @@ const Modal: React.FC<ModalProps> = () => {
             </ModalContent>
           </Modal>
         </>
-      )
+    )
 };
 
-export default Modal;
+export default ConversationModal;
