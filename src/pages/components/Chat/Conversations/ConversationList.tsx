@@ -16,10 +16,10 @@ const ConversationList: React.FC<ConversationListProps> = () => {
     return (
         <Box width='100%'>
             <Box 
-                py={2} 
+                py={1} 
                 px={4} 
                 mb={4} 
-                bg='blackAlpha.300' 
+                bg='blackAlpha.700' 
                 borderRadius={4} 
                 cursor='pointer' 
                 onClick={onOpen}
@@ -28,7 +28,7 @@ const ConversationList: React.FC<ConversationListProps> = () => {
                 Find or start a conversation
                 </Text>  
             </Box>
-            <ConversationModal isOpen={isOpen} onClose={onClose}/>
+            <ConversationModal isOpen={isOpen} onClose={onClose} />
         </Box> 
     )
 };
